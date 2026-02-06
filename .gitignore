@@ -1,0 +1,24 @@
+# Test files
+day_*.txt
+ferociously-blogging_*.txt
+as-is-blog_*.md
+april-showers
+four
+five
+six*
+seven*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
