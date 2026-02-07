@@ -4,10 +4,6 @@ description: Software Engineering Intern | Personal Portfolio
 author: Jamie
 email: jamie@example.com
 
-# Build settings
-theme: null
-plugins: []
-
 # Site settings
 url: "https://jamieplu.github.io"
 baseurl: ""
@@ -15,8 +11,9 @@ baseurl: ""
 # Exclude from processing
 exclude:
   - README.md
-  - create.sh
-  - rando.sh
+  - .gitignore
+  - .github/
+  - "*.sh"
   - day_*.txt
   - ferociously-blogging_*.txt
   - as-is-blog_*.md
@@ -25,3 +22,4 @@ exclude:
   - five
   - six*
   - seven*
+  - my-profile.txt
