@@ -35,6 +35,27 @@ Thanks for visiting my profile!
   </a>
 </div> -->
 
+---
+
+## 🚀 GitHub Pages Deployment
+
+This repository is configured for GitHub Pages deployment. The site is automatically deployed when changes are pushed to the `main` branch.
+
+**Live Site:** https://jamieplu.github.io
+
+### Configuration Files
+
+- `.nojekyll` - Disables Jekyll processing for this plain HTML site
+- `_config.yml` - GitHub Pages configuration with site metadata
+- `.github/workflows/static.yml` - GitHub Actions workflow for automatic deployment
+
+### How It Works
+
+1. Push changes to the `main` branch
+2. GitHub Actions workflow automatically triggers
+3. Site content is uploaded to GitHub Pages
+4. Your site is live at https://jamieplu.github.io
+
 <!---
 jamieplu/jamieplu is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
