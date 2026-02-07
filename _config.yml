@@ -1,0 +1,25 @@
+# GitHub Pages Configuration
+title: Jamie - Software Engineer
+description: Software Engineering Intern | Personal Portfolio
+author: Jamie
+email: jamie@example.com
+
+# Site settings
+url: "https://jamieplu.github.io"
+baseurl: ""
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .gitignore
+  - .github/
+  - "*.sh"
+  - day_*.txt
+  - ferociously-blogging_*.txt
+  - as-is-blog_*.md
+  - april-showers
+  - four
+  - five
+  - six*
+  - seven*
+  - my-profile.txt
