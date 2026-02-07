@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamie Plu | Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a3e635', // Monster Green
+                        secondary: '#2dd4bf', // Slime Teal
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        card: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a3e635;
+            border-radius: 5px;
+        }
+        
+        /* Floating Bubbles Effect */
+        .bubble {
+            position: absolute;
+            background: rgba(163, 230, 53, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-100px) translateX(50px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        .avatar-glow {
+            filter: drop-shadow(0 0 20px rgba(163, 230, 53, 0.3));
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-dark relative overflow-x-hidden">
+
+    <!-- Animated Background Elements -->
+    <div class="bubble w-64 h-64 top-20 left-10" style="animation-delay: 0s;"></div>
+    <div class="bubble w-96 h-96 bottom-20 right-10" style="animation-delay: -5s; background: rgba(45, 212, 191, 0.05);"></div>
+    <div class="bubble w-48 h-48 top-1/2 left-1/3" style="animation-delay: -2s;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-primary/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-3 group">
+                <img src="jamie plu.jpg" alt="Jamie Logo" class="w-10 h-10 rounded-full object-cover border-2 border-primary group-hover:scale-110 transition-all">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="hover:text-primary transition-colors text-sm font-medium">Services</a>
+                <a href="#about" class="hover:text-primary transition-colors text-sm font-medium">About</a>
+                <a href="#skills" class="hover:text-primary transition-colors text-sm font-medium">Skills</a>
+                <a href="#projects" class="hover:text-primary transition-colors text-sm font-medium">Projects</a>
+                <a href="#contact" class="hover:text-primary transition-colors text-sm font-medium">Contact</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl text-primary"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-primary/20 absolute w-full left-0">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#services" class="hover:text-primary transition-colors">Services</a>
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20" id="home">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-bold border border-primary/30 tracking-wide uppercase">
+                    Code Monster
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
+                    Devouring complex <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">codebases</span> for breakfast.
+                </h1>
+                <p class="text-lg text-slate-400 max-w-lg leading-relaxed">
+                    I'm Jamie Plu. I build high-energy, performant web applications with a focus on monstrously good user experiences.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="px-8 py-3 bg-primary text-dark font-bold rounded-xl hover:bg-white transition-all transform hover:-rotate-2">
+                        See My Lair
+                    </a>
+                    <a href="#contact" class="px-8 py-3 border-2 border-primary/50 text-primary font-bold rounded-xl hover:bg-primary/10 transition-all">
+                        Summon Me
+                    </a>
+                </div>
+                <div class="flex gap-6 pt-6 text-slate-400">
+                    <a href="https://github.com/jamieplu" target="_blank" class="hover:text-primary text-2xl transition-all hover:scale-125"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/jamiepluu" target="_blank" class="hover:text-primary text-2xl transition-all hover:scale-125"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="relative hidden md:block group">
+                <div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative p-2 rounded-full border-4 border-dashed border-primary/30 animate-[spin_20s_linear_infinite] pointer-events-none">
+                    <div class="w-full aspect-square rounded-full border-2 border-secondary/20"></div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <img src="jamie plu.jpg" 
+                         alt="Jamie Plu Avatar" 
+                         class="w-4/5 h-4/5 rounded-full object-cover border-8 border-card avatar-glow shadow-2xl transition-transform duration-500 hover:scale-110"
+                         onerror="this.src='https://placehold.co/600x600/1e293b/a3e635?text=Jamie+Plu'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-darker" id="services">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tighter italic">Monster Skills</h2>
+                <div class="w-24 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-primary/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Vibrant UIs</h3>
+                    <p class="text-slate-400">Building eye-catching interfaces that grab attention and don't let go. React & Tailwind specialist.</p>
+                </div>
+                <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-secondary/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 group-hover:bg-secondary group-hover:text-dark transition-all">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smart Systems</h3>
+                    <p class="text-slate-400">Architecture that thinks. Scalable Node.js backends and complex data handling.</p>
+                </div>
+                <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-primary/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Beastly Performance</h3>
+                    <p class="text-slate-400">Optimization is key. I make apps run faster than a monster chasing lunch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20" id="skills">
+        <div class="container mx-auto px-6">
+            <div class="bg-card/50 rounded-[3rem] p-12 border border-primary/10">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-black text-white mb-8 italic">DNA & EVOLUTION</h2>
+                        <div class="space-y-8">
+                            <div class="group">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-primary group-hover:translate-x-2 transition-transform">JavaScript / TS</span>
+                                    <span class="font-mono">95%</span>
+                                </div>
+                                <div class="w-full bg-dark rounded-full h-4 p-1">
+                                    <div class="bg-primary h-full rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-secondary group-hover:translate-x-2 transition-transform">React Ecosystem</span>
+                                    <span class="font-mono">92%</span>
+                                </div>
+                                <div class="w-full bg-dark rounded-full h-4 p-1">
+                                    <div class="bg-secondary h-full rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-primary group-hover:translate-x-2 transition-transform">Cloud Architecture</span>
+                                    <span class="font-mono">88%</span>
+                                </div>
+                                <div class="w-full bg-dark rounded-full h-4 p-1">
+                                    <div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                        <div class="aspect-square bg-dark rounded-2xl flex flex-col items-center justify-center gap-4 border-2 border-primary/20 hover:border-primary transition-all hover:scale-105">
+                            <i class="fab fa-react text-4xl text-primary"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">React</span>
+                        </div>
+                        <div class="aspect-square bg-dark rounded-2xl flex flex-col items-center justify-center gap-4 border-2 border-secondary/20 hover:border-secondary transition-all hover:scale-105">
+                            <i class="fab fa-node-js text-4xl text-secondary"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Node</span>
+                        </div>
+                        <div class="aspect-square bg-dark rounded-2xl flex flex-col items-center justify-center gap-4 border-2 border-primary/20 hover:border-primary transition-all hover:scale-105">
+                            <i class="fas fa-database text-4xl text-primary"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Postgres</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20" id="projects">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-black text-white mb-12 text-center uppercase">Creations</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project 1 -->
+                <div class="group bg-card rounded-[2rem] overflow-hidden border-2 border-white/5 hover:border-primary transition-all">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-all"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-white mb-3">Project: Chimera</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">A multi-tenant SaaS platform built with Next.js and Go. Monstrously scalable architecture.</p>
+                        <a href="#" class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ENTER LAB <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group bg-card rounded-[2rem] overflow-hidden border-2 border-white/5 hover:border-secondary transition-all">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-secondary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-all"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-white mb-3">Hydra Analytics</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Real-time data visualization with many heads. Built using D3.js and Socket.io.</p>
+                        <a href="#" class="text-secondary font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ENTER LAB <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-darker" id="contact">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-gradient-to-br from-card to-darker rounded-[3rem] p-8 md:p-16 border-2 border-primary/20 relative shadow-2xl">
+                <div class="absolute -top-12 -left-12 w-24 h-24 bg-primary rounded-full blur-2xl opacity-20"></div>
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-black text-white mb-4 uppercase">Let's Mutate Ideas</h2>
+                    <p class="text-slate-400">Ready to build something terrifyingly awesome?</p>
+                </div>
+                <form class="space-y-6" onsubmit="event.preventDefault();">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" class="w-full bg-dark/50 border-2 border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-all" placeholder="Your Name">
+                        <input type="email" class="w-full bg-dark/50 border-2 border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-secondary transition-all" placeholder="Email">
+                    </div>
+                    <textarea rows="4" class="w-full bg-dark/50 border-2 border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-all" placeholder="Your Mission..."></textarea>
+                    <button class="w-full bg-primary hover:bg-white text-dark font-black py-5 rounded-2xl transition-all shadow-[0_0_30px_rgba(163,230,53,0.3)] hover:shadow-[0_0_50px_rgba(163,230,53,0.5)] transform hover:-translate-y-1">
+                        UNLEASH THE MESSAGE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-primary/10 py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <img src="jamie plu.jpg" class="w-12 h-12 rounded-full border-2 border-primary">
+                <span class="font-black text-white italic tracking-tighter">JAMIE PLU</span>
+            </div>
+            <p class="text-slate-500 text-sm font-mono tracking-widest uppercase">
+                &copy; 2024 - BORN TO CODE - RAISED BY MONSTERS
+            </p>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-slate-400 hover:text-secondary transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const icon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            icon.className = mobileMenu.classList.contains('hidden') ? 'fas fa-bars text-2xl text-primary' : 'fas fa-times text-2xl text-primary';
+        });
+
+        // Add some "slime" trail logic to elements on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px) scale(0.98)';
+            section.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
