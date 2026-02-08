@@ -69,15 +69,13 @@
     <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-primary/10">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="flex items-center gap-3 group">
-                <img src="jamie-plu.jpg" alt="Jamie Logo" class="w-10 h-10 rounded-full object-cover border-2 border-primary group-hover:scale-110 transition-all">
+                <img src="jamie-plu.png" alt="Jamie Logo" class="w-10 h-10 rounded-full object-cover border-2 border-primary group-hover:scale-110 transition-all">
             </a>
             
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#services" class="hover:text-primary transition-colors text-sm font-medium">Services</a>
-                <a href="#about" class="hover:text-primary transition-colors text-sm font-medium">About</a>
                 <a href="#skills" class="hover:text-primary transition-colors text-sm font-medium">Skills</a>
                 <a href="#projects" class="hover:text-primary transition-colors text-sm font-medium">Projects</a>
-                <a href="#contact" class="hover:text-primary transition-colors text-sm font-medium">Contact</a>
+                <a href="#contact" class="hover:text-primary transition-colors text-sm font-medium text-primary">Summon</a>
             </div>
 
             <button id="menu-btn" class="md:hidden text-white focus:outline-none">
@@ -87,8 +85,6 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-primary/20 absolute w-full left-0">
             <div class="flex flex-col p-6 space-y-4">
-                <a href="#services" class="hover:text-primary transition-colors">Services</a>
-                <a href="#about" class="hover:text-primary transition-colors">About</a>
                 <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
                 <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
                 <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
@@ -128,7 +124,7 @@
                     <div class="w-full aspect-square rounded-full border-2 border-secondary/20"></div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <img src="jamie plu.jpg" 
+                    <img src="jamie-plu.png" 
                          alt="Jamie Plu Avatar" 
                          class="w-4/5 h-4/5 rounded-full object-cover border-8 border-card avatar-glow shadow-2xl transition-transform duration-500 hover:scale-110"
                          onerror="this.src='https://placehold.co/600x600/1e293b/a3e635?text=Jamie+Plu'">
@@ -229,34 +225,59 @@
     <!-- Projects Section -->
     <section class="py-20" id="projects">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-black text-white mb-12 text-center uppercase">Creations</h2>
+            <h2 class="text-4xl font-black text-white mb-12 text-center uppercase tracking-tighter">Creations</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Project 1 -->
-                <div class="group bg-card rounded-[2rem] overflow-hidden border-2 border-white/5 hover:border-primary transition-all">
+                <!-- Project: Meshery -->
+                <div class="group bg-card rounded-[2rem] overflow-hidden border-2 border-white/5 hover:border-primary transition-all flex flex-col">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" 
-                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img src="meshery-logo-light-text.svg" 
+                             class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700">
                         <div class="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-all"></div>
+                        <div class="absolute top-4 right-4 bg-dark/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/30 text-[10px] font-black uppercase text-primary">
+                            CNCF Project
+                        </div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black text-white mb-3">Project: Chimera</h3>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">A multi-tenant SaaS platform built with Next.js and Go. Monstrously scalable architecture.</p>
-                        <a href="#" class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    <div class="p-8 flex-grow">
+                        <h3 class="text-2xl font-black text-white mb-3">Meshery</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">The cloud native management plane. Devouring service meshes and Kubernetes complexity with an extensible platform.</p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-[10px] font-black px-2 py-1 bg-white/5 border border-white/10 rounded uppercase">Go</span>
+                            <span class="text-[10px] font-black px-2 py-1 bg-white/5 border border-white/10 rounded uppercase">React</span>
+                            <span class="text-[10px] font-black px-2 py-1 bg-white/5 border border-white/10 rounded uppercase">GraphQL</span>
+                        </div>
+                        <a href="https://meshery.io" target="_blank" class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all uppercase text-sm tracking-widest">
                             ENTER LAB <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="group bg-card rounded-[2rem] overflow-hidden border-2 border-white/5 hover:border-secondary transition-all">
+
+                <!-- Project: Chimera -->
+                <div class="group bg-card rounded-[2rem] overflow-hidden border-2 border-white/5 hover:border-secondary transition-all flex flex-col">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" 
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" 
                              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
                         <div class="absolute inset-0 bg-secondary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-all"></div>
                     </div>
-                    <div class="p-8">
+                    <div class="p-8 flex-grow">
+                        <h3 class="text-2xl font-black text-white mb-3">Project: Chimera</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">A multi-tenant SaaS platform built with Next.js and Go. Monstrously scalable architecture.</p>
+                        <a href="#" class="text-secondary font-bold flex items-center gap-2 hover:gap-4 transition-all uppercase text-sm tracking-widest">
+                            ENTER LAB <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: Hydra -->
+                <div class="group bg-card rounded-[2rem] overflow-hidden border-2 border-white/5 hover:border-primary transition-all flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-all"></div>
+                    </div>
+                    <div class="p-8 flex-grow">
                         <h3 class="text-2xl font-black text-white mb-3">Hydra Analytics</h3>
                         <p class="text-slate-400 text-sm mb-6 leading-relaxed">Real-time data visualization with many heads. Built using D3.js and Socket.io.</p>
-                        <a href="#" class="text-secondary font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                        <a href="#" class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all uppercase text-sm tracking-widest">
                             ENTER LAB <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -265,25 +286,39 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Summon Section -->
     <section class="py-20 bg-darker" id="contact">
         <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-gradient-to-br from-card to-darker rounded-[3rem] p-8 md:p-16 border-2 border-primary/20 relative shadow-2xl">
-                <div class="absolute -top-12 -left-12 w-24 h-24 bg-primary rounded-full blur-2xl opacity-20"></div>
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-black text-white mb-4 uppercase">Let's Mutate Ideas</h2>
-                    <p class="text-slate-400">Ready to build something terrifyingly awesome?</p>
-                </div>
-                <form class="space-y-6" onsubmit="event.preventDefault();">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <input type="text" class="w-full bg-dark/50 border-2 border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-all" placeholder="Your Name">
-                        <input type="email" class="w-full bg-dark/50 border-2 border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-secondary transition-all" placeholder="Email">
+            <div class="bg-gradient-to-br from-card to-darker rounded-[3rem] p-8 md:p-16 border-2 border-primary/20 relative shadow-2xl overflow-hidden text-center">
+                <!-- Background Glow -->
+                <div class="absolute -top-12 -left-12 w-48 h-48 bg-primary rounded-full blur-[80px] opacity-20"></div>
+                <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-secondary rounded-full blur-[80px] opacity-20"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-6 uppercase italic tracking-tighter">Summon the Beast</h2>
+                    <p class="text-slate-400 text-lg mb-12 max-w-xl mx-auto">
+                        Have a project that needs some monster energy? Use a summoning circle below to reach out.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                        <!-- Email Link -->
+                        <a href="mailto:hello@jamieplu.dev" class="group relative w-full sm:w-auto px-10 py-5 bg-primary rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(163,230,53,0.3)] hover:shadow-[0_0_50px_rgba(163,230,53,0.5)]">
+                            <span class="relative z-10 flex items-center justify-center gap-3 text-dark font-black text-lg uppercase tracking-widest">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </span>
+                            <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                        </a>
+                        
+                        <!-- Twitter Link -->
+                        <a href="https://x.com/jamiepluu" target="_blank" class="group relative w-full sm:w-auto px-10 py-5 border-2 border-secondary text-secondary rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95 hover:bg-secondary/10">
+                            <span class="relative z-10 flex items-center justify-center gap-3 font-black text-lg uppercase tracking-widest">
+                                <i class="fa-brands fa-x-twitter"></i>
+                                Chirp at me
+                            </span>
+                        </a>
                     </div>
-                    <textarea rows="4" class="w-full bg-dark/50 border-2 border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-all" placeholder="Your Mission..."></textarea>
-                    <button class="w-full bg-primary hover:bg-white text-dark font-black py-5 rounded-2xl transition-all shadow-[0_0_30px_rgba(163,230,53,0.3)] hover:shadow-[0_0_50px_rgba(163,230,53,0.5)] transform hover:-translate-y-1">
-                        UNLEASH THE MESSAGE
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -292,15 +327,15 @@
     <footer class="bg-dark border-t border-primary/10 py-12">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-4">
-                <img src="jamie plu.jpg" class="w-12 h-12 rounded-full border-2 border-primary">
-                <span class="font-black text-white italic tracking-tighter">JAMIE PLU</span>
+                <img src="jamie-plu.png" class="w-12 h-12 rounded-full border-2 border-primary">
+                <span class="font-black text-white italic tracking-tighter uppercase">JAMIE PLU</span>
             </div>
-            <p class="text-slate-500 text-sm font-mono tracking-widest uppercase">
-                &copy; 2024 - BORN TO CODE - RAISED BY MONSTERS
+            <p class="text-slate-500 text-sm font-mono tracking-widest uppercase text-center md:text-left">
+                &copy; 2026 - BORN TO CODE - RAISED BY MONSTERS
             </p>
             <div class="flex gap-6">
-                <a href="#" class="text-slate-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-slate-400 hover:text-secondary transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://github.com/jamieplu" target="_blank" class="text-slate-400 hover:text-primary transition-colors"><i class="fab fa-github text-xl"></i></a>
+                <a href="https://x.com/jamiepluu" target="_blank" class="text-slate-400 hover:text-secondary transition-colors"><i class="fa-brands fa-x-twitter text-xl"></i></a>
             </div>
         </div>
     </footer>
@@ -315,7 +350,7 @@
             icon.className = mobileMenu.classList.contains('hidden') ? 'fas fa-bars text-2xl text-primary' : 'fas fa-times text-2xl text-primary';
         });
 
-        // Add some "slime" trail logic to elements on scroll
+        // Scroll reveal logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
